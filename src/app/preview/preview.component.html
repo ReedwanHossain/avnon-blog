@@ -1,0 +1,12 @@
+<div class="preview-container">
+    <h1>{{ title }}</h1>
+    <div *ngFor="let item of contentList">
+        <div *ngIf="item.textArea && item.text">
+            <p>{{ item.text }}</p> <br>
+        </div>
+        <div *ngIf="item.imageFile">
+            <img [src]="item.imageFile" [ngClass]="item.imageSize" />
+            <p>{{ item.caption }}</p>
+        </div>
+    </div>
+</div>

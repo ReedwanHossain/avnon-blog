@@ -1,0 +1,151 @@
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5em;
+  margin: 1em;
+}
+
+.article {
+  display: flex;
+  align-items: stretch;
+}
+.article > div {
+  margin: 10px;
+  font-size: 20px;
+}
+.title-input {
+  border: none;
+  outline: none;
+  overflow: hidden;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #ededed;
+  font-size: 25px;
+  line-height: 1.5;
+  padding: 8px 0;
+  resize: none;
+  transition: border-color 150ms ease;
+  width: 100%;
+}
+.block {
+  margin-bottom: 20px;
+}
+.image-block img {
+  width: auto;
+  max-width: 30%;
+  height: 40%;
+  max-height: 40%;
+}
+.insert-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+textarea {
+  resize: vartical;
+  overflow: hidden;
+}
+.borderless-textarea {
+  border: none;
+  outline: none;
+  overflow: hidden;
+  border-radius: 0;
+  border: none;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 8px 0;
+  resize: none;
+  transition: border-color 150ms ease;
+  width: 100%;
+  height: auto;
+}
+
+.borderless-textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.inline-elements {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fileBtn {
+  border-radius: 0.8em;
+  border-style: double;
+  font: inherit;
+  background: transparent;
+}
+.publishBtn {
+  float: right;
+  margin-right: 7em;
+  position: sticky;
+  font: inherit;
+  border-radius: 0.3em;
+  background: transparent;
+}
+
+.selected {
+  background-color: rgb(102 136 206 / 10%);
+}
+
+.image-viewer {
+  position: relative;
+}
+
+.image-viewer img {
+  width: 100%;
+  height: auto;
+}
+
+.standard {
+  width: 40%;
+  max-width: 40%;
+  height: 50%;
+  max-height: 50%;
+}
+
+.larger {
+  width: 100%;
+  max-width: 100%;
+  height: 30%;
+  max-height: 30%;
+}
+
+.fullWidth {
+  width: 100%;
+  max-width: 100%;
+  height: 75%;
+}
+
+.image-viewer select {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 10px;
+  padding: 7px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.image-viewer input {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 10px;
+  padding: 7px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}

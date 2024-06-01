@@ -1,0 +1,37 @@
+<div class="editor-container" (click)="deselectAll()">
+    <div>
+        <input type="text" [(ngModel)]="title" placeholder="Enter title" class="title-input">
+    </div>
+    <div #artDiv>
+        <div draggable="true" *ngFor="let item of contentList; let i = index;" class="article"
+            [class.selected]="item.selected" (click)="setActiveItem(i);" (dragstart)="onDragStart(i)"
+            (dragover)="onDragOver($event)" (drop)="onDrop(i)">
+            <div *ngIf="i === activeIndex && !item.text?.length && !item.image" style="flex-grow: .1">
+                <button (click)="addImage(i)" class="fileBtn">+</button>
+            </div>
+            <div *ngIf="item.textArea && !item.image" style="flex-grow: 9">
+                <textarea #newTextarea [(ngModel)]="item.text" (keydown.enter)="onEnterPress($event, i)"
+                    (keydown.backspace)="onBackspacePress($event, i)" (keydown.arrowup)="onArrowUpPress($event, i)"
+                    (keydown.arrowdown)="onArrowDownPress($event, i)" class="borderless-textarea"></textarea>
+            </div>
+            <div *ngIf="item.imageFile && !item.text?.length" style="flex-grow: 9" class="image-viewer">
+                <img [src]="contentList[i].imageFile" [ngClass]="contentList[i].imageSize" />
+                <select [(ngModel)]="item.imageSize" (change)="onImageSizeSelect(i)">
+                    <option value="standard">Standard Size</option>
+                    <option value="larger">Larger Version</option>
+                    <option value="fullWidth">Full Width</option>
+                </select>
+                <input type="text" [(ngModel)]="item.caption" placeholder="Enter caption">
+            </div>
+            <div *ngIf="i === activeIndex && item.image && !item.text?.length" style="flex-grow: .1">
+                <input *ngIf="!item.imageFile" type="file" accept="image/png, image/gif, image/jpeg"
+                    (change)="onImageChange($event, i)">
+                <button type="button" (click)="closeOption(i)" class="fileBtn">x</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class=" publishBtn" (click)="publish()">Publish</button>
+    </div>
+
+</div>
