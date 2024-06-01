@@ -1,5 +1,14 @@
 # AvnonBlog
 
+### Features:
+
+- Upload and display images with adjustable sizes and captions.
+-  Drag and drop to reorder contents block with mouse click and move
+- Delete content blocks using the backspace key 
+- Navigate through content blocks using keyboard arrow up down keys
+-  Selection of all content block with CTRL+A, immediate Backspace to clear all the content block
+- Publish articles with a preview button.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
 ## Development server
